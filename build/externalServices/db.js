@@ -38,7 +38,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.db = void 0;
 var mongoose_1 = require("mongoose");
-var leaderModel_1 = require("../models/leaderModel");
 var fetchDumpData_1 = require("../script/fetchDumpData");
 var DBConnection = /** @class */ (function () {
     function DBConnection() {
@@ -65,27 +64,6 @@ var DBConnection = /** @class */ (function () {
             console.log("Mongoose failed to connect to MongoDB.");
             console.error("Mongoose connection error: ", error);
             process.exit(0);
-        });
-    };
-    DBConnection.prototype.insertDbquery = function (messageInfo) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _id;
-            return __generator(this, function (_a) {
-                console.log(messageInfo);
-                _id = messageInfo._id;
-                try {
-                    return [2 /*return*/, leaderModel_1.LeaderBoardModel.updateOne({
-                            _id: _id
-                        }, {
-                            messageInfo: messageInfo
-                        })];
-                }
-                catch (error) {
-                    console.log("inserting", error);
-                    return [2 /*return*/, error];
-                }
-                return [2 /*return*/];
-            });
         });
     };
     return DBConnection;

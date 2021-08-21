@@ -61,13 +61,11 @@ var LeaderBoard = /** @class */ (function () {
                         return [4 /*yield*/, leaderBoardService_1.leaderBoardService.totaldataCount()];
                     case 2:
                         totalCount = _c.sent();
-                        console.log("totalCount", totalCount);
-                        console.log("totalCount", totalCount, Math.ceil(totalCount / Number(buildQuery.limit)));
                         res.status(200);
                         res.json({
                             data: result,
                             pagination: {
-                                currentPage: buildQuery.page,
+                                currentPage: Number(buildQuery.page),
                                 limit: buildQuery.limit,
                                 totalPage: Math.ceil(totalCount / Number(buildQuery.limit))
                             }

@@ -45,20 +45,8 @@ var db_1 = require("./externalServices/db");
 var leaderBoard_1 = require("./controllers/leaderBoard");
 var body_parser_1 = __importDefault(require("body-parser"));
 var cors = require('cors');
-// app.options('*', cors());
-// const httpServer = createServer(app);
 app.use(body_parser_1.default.json({ limit: "25mb" }));
 app.use(body_parser_1.default.urlencoded({ extended: true, limit: "25mb" }));
-// const corsOpts = {
-//   origin: '*',
-//   methods: [
-//     'GET',
-//     'POST',
-//   ],
-//   allowedHeaders: [
-//     'Content-Type',
-//   ],
-// };
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -79,18 +67,3 @@ app.listen(3000, function () { return __awaiter(void 0, void 0, void 0, function
         }
     });
 }); });
-// function socketInit() {
-//   io.sockets.on("connection", (socket: Socket) => {
-//     console.log("connected");
-//     socketConnection.sockerInitialization(socket);
-//   });
-// }
-// function listenSocketInit() {
-//   const socketConnection = clientIo("http://localhost:3000");
-//   socketConnection.on("sending_data", (data: any) => {
-//     console.log("received")
-//     clientSockerConnection.eventHandler(data);
-//   })
-// }
-// socketInit();
-// listenSocketInit()
