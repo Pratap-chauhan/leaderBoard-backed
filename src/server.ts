@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
   next();
 })
 
-app.get("/leaderboard", leaderBoard.getLeaderBoard);
+app.get("/api/leaderboard", leaderBoard.getLeaderBoard);
 
 
 app.listen(3000, async () => {
